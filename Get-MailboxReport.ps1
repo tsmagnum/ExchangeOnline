@@ -88,6 +88,7 @@ if ($ExolPSSession.ConfigurationName -ne "Microsoft.Exchange" -or $ExolPSSession
 #endregion
 
 # Getting mailbox data and sorting them
+Write-Host "Processing your data, please wait..." -ForegroundColor Green
 $mailboxes = Get-Mailbox
 
 $stats = ( $mailboxes | Get-MailboxStatistics | Select-Object -property `
@@ -104,7 +105,8 @@ $stats = ( $mailboxes | Get-MailboxStatistics | Select-Object -property `
 # Choosing the desired report format
 switch ($reportFormat) 
 {
-    console { $stats | Format-Table -AutoSize -Wrap -RepeatHeader }
+    console { $stats | Format-Table -AutoSize -Wrap -RepeatHeader
+    Write-Host "Total Number of Mailbox: " $mailboxes.count -ForegroundColor Green}
     ogv { $stats | Out-Gridview }
     html { write-warning "Sorry, this feature is not yet available: please choose another format." }
 }

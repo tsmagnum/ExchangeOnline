@@ -88,7 +88,7 @@ if ($ExolPSSession.ConfigurationName -ne "Microsoft.Exchange" -or $ExolPSSession
 #endregion
 
 # Getting mailbox data and sorting them
-$mailboxes = Get-Mailbox #"Aluffi Anna"
+$mailboxes = Get-Mailbox
 
 $stats = ( $mailboxes | Get-MailboxStatistics | Select-Object -property `
 @{Label = "Name"; Expression={$_.DisplayName}},`

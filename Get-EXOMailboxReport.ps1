@@ -31,7 +31,7 @@ $emailPort = 25
 $emailEnableSSL = $true
 $emailUser = "yourUser"
 $emailPass = "yourPassword"
-$emailFrom = "exolReport@microsoft.com"
+$emailFrom = "exolReport@yourdomain.com"
 $emailTo = "your@email.com"
 $emailSubject = "Exchange Online Mailbox Report"
 #endregion

@@ -1,8 +1,8 @@
 #region Credits
 # Author: Federico Lillacci - Coesione Srl - www.coesione.net
 # GitHub: https://github.com/tsmagnum
-# Version: 1.0
-# Date: 23/02/2024
+# Version: 1.1
+# Date: 26/02/2024
 #endregion
 
 #region TODO
@@ -54,6 +54,7 @@ Foreach ($Computer in $Computers)
          Name = $file.Filename
          Path = $file.Description
          Size = ($file.FileSize)/1GB
+         LastAccess = ($file.LastAccessed.Split("."))[0]
       }  
 
       Write-Host -ForegroundColor Green "PST found! Adding $($result.Name) to results"
